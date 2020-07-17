@@ -26,13 +26,6 @@ public class RunExam extends HttpServlet {
     String dbUrl = "jdbc:odbc:Online_Exam_Portal";
 String dbClass = "com.mysql.jdbc.Driver";
 String query = "";
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -82,13 +75,6 @@ String query = "";
                 iQuestionNo--;
             }
             
-              //else
-            //{
-           //     SelectedOption = request.getParameter("OptionsRadio");
-           // String OptionName= "Question"+iQuestionNo+"SelectedOption";
-           // UserSession.setAttribute(OptionName, SelectedOption);
-           // response.sendRedirect("submitExamConfirmation.jsp");
-           // }
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
                
         Connection con = DriverManager.getConnection (dbUrl,"","");
