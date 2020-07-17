@@ -90,3 +90,34 @@ if(Direction.equals("Next"))
            // }
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
                
+            
+             Connection con = DriverManager.getConnection (dbUrl,"","");
+        Statement stmt = con.createStatement();
+        
+        query="select Question, OptionA, OptionB, OptionC, OptionD from Exam_Question_Bank where ExamId="
+                +UserSession.getAttribute("ExamID")+" and QuestionNo = "+iQuestionNo;
+        ResultSet rs = stmt.executeQuery(query); 
+        
+        if(rs.next())
+        {
+            UserSession.setAttribute("CurrentQuestion", rs.getString("Question"));
+            UserSession.setAttribute("OptionA", rs.getString("OptionA"));
+            UserSession.setAttribute("OptionB", rs.getString("OptionB"));
+            UserSession.setAttribute("OptionC", rs.getString("OptionC"));
+            UserSession.setAttribute("OptionD", rs.getString("OptionD"));
+        }
+        
+        //out.println(""+rs.getString("Question"));
+        
+            
+            response.sendRedirect("QuestionPaper.jsp");
+        } 
+        catch(Exception e)
+        {
+            e.printStackTrace(out);
+        }
+        finally {            
+            out.close();
+        }
+    }
+
