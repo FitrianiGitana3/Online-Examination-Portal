@@ -52,3 +52,16 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             out.println("</body>");
             out.println("</html>");
              */
+            
+            Cookie[] ExamCookies = request.getCookies();
+            for(int cookieCount = 0; cookieCount < ExamCookies.length; cookieCount++)
+            {
+                if(ExamCookies[cookieCount].getName().equals("QuestionNo"))
+                {
+                    iQuestionNo = Integer.parseInt(ExamCookies[cookieCount].getValue());
+                }
+                if(ExamCookies[cookieCount].getName().equals("MoveDirection"))
+                {
+                    Direction = ExamCookies[cookieCount].getValue();
+                }
+            }
