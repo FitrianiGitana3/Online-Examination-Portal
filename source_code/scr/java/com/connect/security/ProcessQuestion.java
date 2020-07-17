@@ -30,6 +30,18 @@ String query = "";
     }
 
     
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        String txtQuestion = "";
+        String txtOptionA = "";
+        String txtOptionB = "";
+        String Answer = "";
+        UserSession.setAttribute("QuestionEntryException", null);
+        try {
+            txtQuestion = readTextarea("addNewQuestion",request);
+            txtOptionA = readTextarea("addOptionA",request);
+            txtOptionB = readTextarea("addOptionB",request);
     
     Answer = request.getParameter("CorrectAnswerRadio");
             //out.print(txtOptionD); 
