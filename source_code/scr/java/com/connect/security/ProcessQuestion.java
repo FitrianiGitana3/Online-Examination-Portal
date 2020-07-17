@@ -36,3 +36,17 @@ String query = "";
             UserSession.setAttribute("QuestionEnteredValue", txtQuestion);
                 UserSession.setAttribute("OptionAEnteredValue", txtOptionA);
                 UserSession.setAttribute("OptionBEnteredValue", txtOptionB);
+
+    
+    
+    else
+            {
+                UserSession.setAttribute("QuestionEnteredValue", null);
+                UserSession.setAttribute("OptionAEnteredValue", null);
+                UserSession.setAttribute("OptionBEnteredValue", null);
+                
+                txtQuestion = convertTextareaContent(txtQuestion);
+                txtOptionA = convertTextareaContent(txtOptionA);
+                txtOptionB = convertTextareaContent(txtOptionB);
+                
+                Connection con = DriverManager.getConnection (dbUrl,"","");
