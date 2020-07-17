@@ -21,6 +21,13 @@ import javax.servlet.http.HttpSession;
  */
 public class RemoveUser extends HttpServlet {
 
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
 
 
        String dbUrl = "jdbc:odbc:Online_Exam_Portal";
