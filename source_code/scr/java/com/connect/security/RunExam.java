@@ -25,3 +25,11 @@ public class RunExam extends HttpServlet {
     String dbUrl = "jdbc:odbc:Online_Exam_Portal";
 String dbClass = "com.mysql.jdbc.Driver";
 String query = "";
+    
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
