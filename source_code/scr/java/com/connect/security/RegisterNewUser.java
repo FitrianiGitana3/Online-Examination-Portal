@@ -31,6 +31,13 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             
         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 
+        String Email = request.getParameter("email");
+        String UserName = request.getParameter("username");
+        String Password = request.getParameter("password2");
+        insertUserInfo.setString(1, Name);
+        insertUserInfo.setString(5, Email);
+        insertUserInfo.setString(6, UserName);
+        insertUserInfo.setString(7, Password);
 
 
 int output = insertUserInfo.executeUpdate();
