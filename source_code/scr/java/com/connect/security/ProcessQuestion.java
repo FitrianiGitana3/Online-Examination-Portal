@@ -29,7 +29,18 @@ String query = "";
         return textAreaContent;
     }
 
-    
+        private String convertTextareaContent(String content)
+    {
+        StringBuilder text = new StringBuilder(content);
+  
+        int loc = (new String(text)).indexOf('\n');
+        while(loc > 0){
+            text.replace(loc, loc+1, "<BR>");
+            loc = (new String(text)).indexOf('\n');
+       }
+        return text.toString();
+    }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
