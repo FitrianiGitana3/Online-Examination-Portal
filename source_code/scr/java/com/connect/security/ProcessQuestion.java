@@ -48,8 +48,17 @@ String query = "";
             UserSession.setAttribute("QuestionEnteredValue", txtQuestion);
                 UserSession.setAttribute("OptionAEnteredValue", txtOptionA);
                 UserSession.setAttribute("OptionBEnteredValue", txtOptionB);
-
-    
+    if(txtQuestion==null|| "".equals(txtQuestion))
+            {
+                UserSession.setAttribute("QuestionEntryException", "Please enter a question");
+                UserSession.setAttribute("QuestionEnteredValue", null);
+                response.sendRedirect("AddQuestions.jsp");
+            }
+            else if(txtOptionA==null || "".equals(txtOptionA))
+            {
+                UserSession.setAttribute("QuestionEntryException", "Please enter Option A");
+                response.sendRedirect("AddQuestions.jsp");
+            } 
     
     else
             {
