@@ -48,8 +48,10 @@ public class ChangeUserPrivilage extends HttpServlet {
         {
         AddAdminQuery="insert into Administrator_List (UserId) values(?)";
         output = userPrivilageChanger.executeUpdate();
-
-          
+        }
+        else if("ToNormalUser".equals(ChangeType))
+        {
+        RemoveAdminQuery = "delete from Administrator_List where UserId = ?";
         userPrivilageChanger = con.prepareStatement(RemoveAdminQuery);
         userPrivilageChanger.setString(1, UserIdToChange);
         output = userPrivilageChanger.executeUpdate();
