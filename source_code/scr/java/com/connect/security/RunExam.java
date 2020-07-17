@@ -65,3 +65,28 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
                     Direction = ExamCookies[cookieCount].getValue();
                 }
             }
+if(Direction.equals("Next"))
+            {
+                iQuestionNo= iQuestionNo-1;
+            SelectedOption = request.getParameter("OptionsRadio");
+            String OptionName= "Question"+iQuestionNo+"SelectedOption";
+            UserSession.setAttribute(OptionName, SelectedOption);
+            iQuestionNo++;
+            }
+            else if(Direction.equals("Back"))
+            {
+                iQuestionNo= iQuestionNo+1;
+            SelectedOption = request.getParameter("OptionsRadio");
+            String OptionName= "Question"+iQuestionNo+"SelectedOption";
+            UserSession.setAttribute(OptionName, SelectedOption);
+                iQuestionNo--;
+            }
+            //else
+            //{
+           //     SelectedOption = request.getParameter("OptionsRadio");
+           // String OptionName= "Question"+iQuestionNo+"SelectedOption";
+           // UserSession.setAttribute(OptionName, SelectedOption);
+           // response.sendRedirect("submitExamConfirmation.jsp");
+           // }
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+               
