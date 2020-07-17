@@ -50,6 +50,10 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             
         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 
+        insertUserInfo = con.prepareStatement(userInfoInsertQuery);
+        
+        String Name= request.getParameter("name");
+
         String Email = request.getParameter("email");
         String UserName = request.getParameter("username");
         String Password = request.getParameter("password2");
