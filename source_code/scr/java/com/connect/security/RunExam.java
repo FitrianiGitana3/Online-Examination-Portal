@@ -17,17 +17,7 @@ if(Direction.equals("Next"))
             SelectedOption = request.getParameter("OptionsRadio");
             String OptionName= "Question"+iQuestionNo+"SelectedOption";
             UserSession.setAttribute(OptionName, SelectedOption);
-            iQuestionNo++;
-            }
-            else if(Direction.equals("Back"))
-            {
-                iQuestionNo= iQuestionNo+1;
-            SelectedOption = request.getParameter("OptionsRadio");
-            String OptionName= "Question"+iQuestionNo+"SelectedOption";
-            UserSession.setAttribute(OptionName, SelectedOption);
-                iQuestionNo--;
-            }
-            //else
+           
             //{
            //     SelectedOption = request.getParameter("OptionsRadio");
            // String OptionName= "Question"+iQuestionNo+"SelectedOption";
