@@ -89,7 +89,16 @@ String query = "";
                 
                 Connection con = DriverManager.getConnection (dbUrl,"","");
         
+        PreparedStatement insertNewQuestion;
         
+                String ExamInfoInsertQuery=""
+                + "insert into Exam_Question_Bank "
+                + "(ExamId, QuestionNo, Question, OptionA, OptionB, OptionC, Answer) "
+                + "values(?,?,?,?,?,?,?,?);";
+           }
+}
+
+
       /** 
      * Returns a short description of the servlet.
      * @return a String containing servlet description
