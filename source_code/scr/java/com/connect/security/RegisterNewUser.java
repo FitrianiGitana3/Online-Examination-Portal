@@ -85,5 +85,8 @@ int output = insertUserInfo.executeUpdate();
                     + er.getMessage());
         }
             
-            
+             finally {            
+            out.close();
+        }
+
 }
