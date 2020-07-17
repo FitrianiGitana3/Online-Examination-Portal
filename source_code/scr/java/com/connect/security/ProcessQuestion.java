@@ -70,6 +70,12 @@ String query = "";
                 UserSession.setAttribute("QuestionEntryException", "Please enter Option A");
                 response.sendRedirect("AddQuestions.jsp");
             } 
+    else if(txtOptionC==null || "".equals(txtOptionC))
+            {
+                UserSession.setAttribute("QuestionEntryException", "Please enter Option C");
+                response.sendRedirect("AddQuestions.jsp");
+            }
+
     
     else
             {
