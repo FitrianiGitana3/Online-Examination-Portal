@@ -18,6 +18,41 @@ import javax.servlet.http.HttpSession;
  * @author Devanand
  */
 
+    public class AuthenticateLogin extends HttpServlet {
+
+        /** 
+         * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+         * @param request servlet request
+         * @param response servlet response
+         * @throws ServletException if a servlet-specific error occurs
+         * @throws IOException if an I/O error occurs
+         */
+        String dbtime;
+    String dbUrl = "jdbc:odbc:Online_Exam_Portal";
+    String dbClass = "com.mysql.jdbc.Driver";
+    String query = "";
+    String adminSelectQuery="";
+    int authenticatorFlag=0;
+    int userTypeFlag=5;
+            int DBUserId;
+            String DBPass= "";
+            String DBUser= "";
+
+    static final int LOGIN_SUCCESS=1;
+    static final int LOGIN_WRONGPASSWORD=2;
+    static final int LOGIN_UNKNOWNUSERNAME=3;
+    static final int ADMIN_USER=4;
+    static final int NORMAL_USER=5;
+    /**
+     * authenticatorFlag - used to record various possible states for login authentication process
+     * The value set in the authenticatorFlag may depict one of the many possible states for the 
+     * validation process
+     * 
+     * 
+     * 
+     * @throws ServletException 
+     */
+
 
     @Override
     public void init(ServletConfig config) throws ServletException{
