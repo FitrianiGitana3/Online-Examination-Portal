@@ -1,17 +1,4 @@
-           // String OptionName= "Question"+iQuestionNo+"SelectedOption";
-           // UserSession.setAttribute(OptionName, SelectedOption);
-           // response.sendRedirect("submitExamConfirmation.jsp");
-           // }
-            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-               
-            
-             Connection con = DriverManager.getConnection (dbUrl,"","");
-        Statement stmt = con.createStatement();
-        
-        query="select Question, OptionA, OptionB, OptionC, OptionD from Exam_Question_Bank where ExamId="
-                +UserSession.getAttribute("ExamID")+" and QuestionNo = "+iQuestionNo;
-        ResultSet rs = stmt.executeQuery(query); 
-        
+         
         if(rs.next())
         {
             UserSession.setAttribute("CurrentQuestion", rs.getString("Question"));
