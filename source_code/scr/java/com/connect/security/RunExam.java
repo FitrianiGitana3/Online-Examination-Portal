@@ -33,3 +33,22 @@ String query = "";
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
+            int iQuestionNo=0;
+            String Direction = "";
+            String SelectedOption = "";
+            HttpSession UserSession = request.getSession(false);
+            /* TODO output your page here
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RunExam</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet RunExam at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+             */
