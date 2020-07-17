@@ -52,3 +52,15 @@ int output = insertUserInfo.executeUpdate();
         out.println("<br>Email    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: "+Email);
         out.println("<br>Username &nbsp&nbsp&nbsp&nbsp&nbsp: "+UserName);
         out.println("<br>Password &nbsp&nbsp&nbsp&nbsp&nbsp: "+Password);
+
+        } 
+        catch(Exception er)
+        {
+            out.println("<br><br> It seems we've got bugs in our systems.... Thank you for bearing with us....<br>"
+                    + "We'll get this fixed for you shortly.....<br> In the meantime, here's some techical jargon<br>"
+                    + "for the geeks among you....<br><br>"
+                    + er.getMessage());
+        }
+            
+            
+}
