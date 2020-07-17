@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package com.connect.security;
-
+import javax.servlet.http.HttpSession;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
