@@ -40,3 +40,20 @@ public class ChangeUserPrivilage extends HttpServlet {
         AddAdminQuery="insert into Administrator_List (UserId) values(?)";
         output = userPrivilageChanger.executeUpdate();
 
+          
+        userPrivilageChanger = con.prepareStatement(RemoveAdminQuery);
+        userPrivilageChanger.setString(1, UserIdToChange);
+        output = userPrivilageChanger.executeUpdate();
+       }
+      }   
+      catch(Exception e)
+                {
+                    e.printStackTrace(out);
+                }
+        finally {            
+            out.close();
+        }
+    }
+  
+}
+
