@@ -1,25 +1,3 @@
-
-            Cookie[] ExamCookies = request.getCookies();
-            for(int cookieCount = 0; cookieCount < ExamCookies.length; cookieCount++)
-            {
-                if(ExamCookies[cookieCount].getName().equals("QuestionNo"))
-                {
-                    iQuestionNo = Integer.parseInt(ExamCookies[cookieCount].getValue());
-                }
-                if(ExamCookies[cookieCount].getName().equals("MoveDirection"))
-                {
-                    Direction = ExamCookies[cookieCount].getValue();
-                }
-            }
-if(Direction.equals("Next"))
-            {
-                iQuestionNo= iQuestionNo-1;
-            SelectedOption = request.getParameter("OptionsRadio");
-            String OptionName= "Question"+iQuestionNo+"SelectedOption";
-            UserSession.setAttribute(OptionName, SelectedOption);
-           
-            //{
-           //     SelectedOption = request.getParameter("OptionsRadio");
            // String OptionName= "Question"+iQuestionNo+"SelectedOption";
            // UserSession.setAttribute(OptionName, SelectedOption);
            // response.sendRedirect("submitExamConfirmation.jsp");
