@@ -1,26 +1,5 @@
          
-        if(rs.next())
-        {
-            UserSession.setAttribute("CurrentQuestion", rs.getString("Question"));
-            UserSession.setAttribute("OptionA", rs.getString("OptionA"));
-            UserSession.setAttribute("OptionB", rs.getString("OptionB"));
-            UserSession.setAttribute("OptionC", rs.getString("OptionC"));
-            UserSession.setAttribute("OptionD", rs.getString("OptionD"));
-        }
-        
-        //out.println(""+rs.getString("Question"));
-        
-            
-            response.sendRedirect("QuestionPaper.jsp");
-        } 
-        catch(Exception e)
-        {
-            e.printStackTrace(out);
-        }
-        finally {            
-            out.close();
-        }
-    }
+     
    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
