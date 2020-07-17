@@ -28,3 +28,11 @@ String query = "";
         textAreaContent = request.getParameter(textAreaName);
         return textAreaContent;
     }
+
+    
+    
+    Answer = request.getParameter("CorrectAnswerRadio");
+            //out.print(txtOptionD); 
+            UserSession.setAttribute("QuestionEnteredValue", txtQuestion);
+                UserSession.setAttribute("OptionAEnteredValue", txtOptionA);
+                UserSession.setAttribute("OptionBEnteredValue", txtOptionB);
