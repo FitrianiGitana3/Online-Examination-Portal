@@ -34,6 +34,20 @@ import java.io.OutputStream;
             PdfWriter.getInstance(document, baos);
 
 
+            if(Score>=60 && Score<70)
+            {
+                performance = "Fair";
+            }
+            if(Score>700 && Score<=100)
+            {
+                performance = "Excellent";
+            }
+            If(Score<50)
+            {
+                performance = "Poor";
+            }
+            // step 3
+            document.open();
 
         // step 4
             Paragraph para1 = new Paragraph("ONLINE EXAMINATION PORTAL", catFont);
