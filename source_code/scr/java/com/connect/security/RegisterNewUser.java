@@ -11,6 +11,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Devanand
+ */
+public class RegisterNewUser extends HttpServlet {
+
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    
+String dbUrl = "jdbc:odbc:Online_Exam_Portal";
+String dbClass = "sun.jdbc.odbc.JdbcOdbcDriver";
+String userInfoInsertQuery = "";
+String userLoginCredentialsInsertQuery = "";
+
 
 
 protected void processRequest(HttpServletRequest request, HttpServletResponse response)
