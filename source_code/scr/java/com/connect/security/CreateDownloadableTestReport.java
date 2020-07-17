@@ -56,6 +56,13 @@ public class CreateDownloadableTestReport extends HttpServlet {
             // step 2
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PdfWriter.getInstance(document, baos);
+            
+            int Score = Integer.parseInt(UserSession.getAttribute("ExamScore").toString()); 
+            String performance = "";
+            if(Score>=50 && Score<60)
+            {
+                performance = "Satisfactory";
+            }
 
 
             if(Score>=60 && Score<70)
