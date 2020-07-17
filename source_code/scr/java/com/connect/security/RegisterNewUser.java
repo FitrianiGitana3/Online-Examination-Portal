@@ -49,6 +49,14 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
             
             
         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+        Connection con = DriverManager.getConnection (dbUrl,"","");
+        PreparedStatement insertUserInfo;
+        
+        userInfoInsertQuery="insert into User_Information (Name, Age, Address, Phone, Email) "
+                + "values(?,?,?,?,?);"
+                + ""
+                + "insert into Login_Credentials (Username, Password)"
+                + "values (?,?);";
 
         insertUserInfo = con.prepareStatement(userInfoInsertQuery);
         
