@@ -15,7 +15,23 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+            
+            response.setHeader("Content-Disposition", "attachment;filename=\"result.pdf\"");
+            HttpSession UserSession = request.getSession(false);
+            if(UserSession.getAttribute("Username") == null)
+               {
+           response.sendRedirect("index.html");
+        }
 
+        else
+               {
+           Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD);
+           Font subFont = new Font(Font.FontFamily.TIMES_ROMAN, 14, Font.NORMAL);
+            // step 1
+            Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+            // step 2
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            PdfWriter.getInstance(document, baos);
 
 
 
