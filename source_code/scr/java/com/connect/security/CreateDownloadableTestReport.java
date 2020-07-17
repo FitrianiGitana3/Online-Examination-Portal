@@ -15,6 +15,30 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ *
+ * @author Devanand
+ */
+public class CreateDownloadableTestReport extends HttpServlet {
+
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+      try {
+            // Get the text that will be added to the PDF
+            //PrintWriter out = response.getWriter();
+            //out.print("Please Wait....");
+            response.setHeader("Expires", "0");
+            response.setHeader("Cache-Control","must-revalidate, post-check=0, pre-check=0");
+            
+
             
             response.setHeader("Content-Disposition", "attachment;filename=\"result.pdf\"");
             HttpSession UserSession = request.getSession(false);
