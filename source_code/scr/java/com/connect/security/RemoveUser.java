@@ -22,3 +22,53 @@ import javax.servlet.http.HttpSession;
 public class RemoveUser extends HttpServlet {
 
 
+
+       String dbUrl = "jdbc:odbc:Online_Exam_Portal";
+String dbClass = "sun.jdbc.odbc.JdbcOdbcDriver";
+String query = "";
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String userIdToRemove = null;
+        HttpSession UserSession = request.getSession(false);
+        UserSession.setAttribute("RemoveUserException", null);
+        try {
+            userIdToRemove = request.getParameter("UserIdToRemoveRadio");
+            
+            if("".equals(userIdToRemove)||userIdToRemove == null)
+            {
+                UserSession.setAttribute("RemoveUserException", "Please select a user account to delete");
+                response.sendRedirect("AdminRemoveUser.jsp");
+            }
+            
+            Class.forName(dbClass);
+            Connection con = DriverManager.getConnection (dbUrl,"","");
+                PreparedStatement insertNewQuestion;
+        
+                query=""
+                        + "delete from User_Information where UserId = ?;"
+                        + "delete from Login_Credentials where UserId = ?;"
+                        + "delete from Administrator_List where UserId = ?;"
+                        + "delete from Exam_Results where UserId = ?;";
+        
+                insertNewQuestion = con.prepareStatement(query);
+        
+                insertNewQuestion.setString(1, userIdToRemove);
+                insertNewQuestion.setString(2, userIdToRemove);
+                insertNewQuestion.setString(3, userIdToRemove);
+                insertNewQuestion.setString(4, userIdToRemove);
+                
+                 int output = insertNewQuestion.executeUpdate();
+            
+            response.sendRedirect("AdminRemoveUser.jsp");
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace(out);
+        }
+        finally {            
+            out.close();
+        }
+    }
+
