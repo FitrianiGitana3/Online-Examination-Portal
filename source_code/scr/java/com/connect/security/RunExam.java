@@ -16,3 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+/**
+ *
+ * @author Devanand
+ */
+public class RunExam extends HttpServlet {
+
+    String dbUrl = "jdbc:odbc:Online_Exam_Portal";
+String dbClass = "com.mysql.jdbc.Driver";
+String query = "";
