@@ -3,6 +3,8 @@
  * and open the template in the editor.
  */
 package com.connect.security;
+	
+package com.connect.security;
 
 import java.io.IOException;
 import java.sql.Connection;
